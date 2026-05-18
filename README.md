@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Хто поруч із вами? 👑
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Гумористичний вірусний квіз про стосунки з науковістю приблизно як у гороскопа.
 
-Currently, two official plugins are available:
+**[▶ Відкрити демо](https://iryna-knyzh.github.io/whoiswho/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Про проєкт
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Мемний веб-застосунок у форматі вірусного тесту: відповідаєш на 20 питань — дізнаєшся хто поруч із тобою і хто ти сама у стосунках. Стиль: смішно, тепло, іронічно — ніби подруга надіслала посилання вночі.
 
-## Expanding the ESLint configuration
+## Що всередині
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Персонажі — хто поруч із вами:**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| | Персонаж | Опис |
+|---|---|---|
+| 👑 | Принц | Уміє говорити словами через рот |
+| 🐸 | Жаба | Емоційна доступність як Wi-Fi у ліфті |
+| 🧛 | Емоційний вампір | Живиться нервами та почуттям провини |
+| 🍞 | Хлібчик | Теплий і затишний, але іноді занадто пасивний |
+| 🌀 | Американські гірки | Сьогодні любов, завтра «мені треба розібратися в собі» |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Персонажі — хто ви:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| | Персонаж | Опис |
+|---|---|---|
+| 🚑 | Рятівник | Готовий лагодити стосунки навіть коли вони не зламані |
+| 🕵️ | Детектив | По одному «ок» може розпочати розслідування на 8 серій |
+| 🥟 | Тривожний пельмешок | Мозок іноді вмикає режим: «ВСЕ ПРОПАЛО» |
+| 🧠 | Психолог мимоволі | Аналізує людей навіть коли ніхто не просив |
+| 😎 | Спокійна людина | Підозріло стабільний екземпляр |
+
+## Функціонал
+
+- **Стартовий екран** з прев'ю всіх персонажів
+- **Квіз** — 20 питань про поведінку партнера
+- **Результат партнера** — хто поруч із вами + для 🐸 і 🧛 кнопка «Викинути»
+- **Квіз про себе** — 5 питань, визначає ваш тип
+- **Результат** — хто ви у стосунках
+- **Екран сумісності** — 6 кумедних метрик (деякі понад 1000%)
+- **Колесо долі** — що скаже ваш персонаж цього разу
+- **Режим королеви** 👑 — фінальний екран зі сповіщенням «Жабу випущено у природне середовище» та танцями ча-ча-ча
+
+## Технології
+
+- React 19 + TypeScript
+- Vite
+- Локальні дані (без backend, без AI)
+- CSS без фреймворків — mobile-first, glassmorphism, анімації
+
+## Запуск локально
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Деплой
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Автоматичний деплой на GitHub Pages через GitHub Actions при пуші в `master`.
